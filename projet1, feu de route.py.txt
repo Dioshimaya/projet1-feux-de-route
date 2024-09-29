@@ -1,0 +1,46 @@
+import time
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+
+VERT1=7
+VERT2=11
+ROUGE1=15
+ROUGE2=22
+ORANGE1=29
+ORANGE2=31
+GPIO.setup(VERT1, GPIO.OUT)
+GPIO.setup(VERT2, GPIO.OUT)
+GPIO.setup(ROUGE1, GPIO.OUT)
+GPIO.setup(ROUGE2, GPIO.OUT)
+GPIO.setup(ORANGE1, GPIO.OUT)
+GPIO.setup(ORANGE2, GPIO.OUT)
+while  1 :
+  GPIO.output(VERT1, True)
+  GPIO.output(VERT2, False)
+  GPIO.output(ROUGE1, False)
+  GPIO.output(ROUGE2, True)
+  GPIO.output(ORANGE1, False)
+  GPIO.output(ORANGE2, False)
+  time.sleep(3)
+  GPIO.output(ORANGE2,True)
+  GPIO.output(VERT1,False)
+  GPIO.output(ROUGE1, False)
+  GPIO.output(ROUGE2, True)
+  GPIO.output(VERT2, False)
+  GPIO.output(ORANGE1,False)
+  time.sleep(1)  
+  GPIO.output(VERT1, False)
+  GPIO.output(ROUGE2, False)
+  GPIO.output(VERT2, True)
+  GPIO.output(ROUGE1, True)
+  GPIO.output(ORANGE2, False)
+  GPIO.output(ORANGE1, False) 
+  time.sleep(3) 
+  GPIO.output(ORANGE2,False)
+  GPIO.output(VERT1,False)
+  GPIO.output(ROUGE1, True)
+  GPIO.output(ROUGE2, False)
+  GPIO.output(VERT2, False)
+  GPIO.output(ORANGE1, True)
+  time.sleep(1)
+  
